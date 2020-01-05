@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-lazy-init="true" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="myobject"   class="com.srivastava.apps.C" autowire="byName">
+<!-- <property name="x" ref="e"/> -->
+<!-- <property name="y">
+<bean class="com.srivastava.apps.E">
+<property name="id" value="1003"></property>
+</bean>
+</property> -->
+</bean>
+<bean id="myobject2"   class="com.srivastava.apps.C"></bean>
+ <bean id="e"  class="com.srivastava.apps.E">
+ <property name="id" value="1001"/>
+ </bean>
+  <bean id="e3"  class="com.srivastava.apps.E">
+  <constructor-arg name="id" value="1000" type="int"></constructor-arg>
+ <property name="id" value="1002"/>
+ </bean> 
+ <bean id="e2"  class="com.srivastava.apps.E">
+  <constructor-arg name="id" value="1000" type="int"></constructor-arg>
+  <constructor-arg name="name" value="Ram" type="String"></constructor-arg>
+ 
+ </bean>
+</beans>
