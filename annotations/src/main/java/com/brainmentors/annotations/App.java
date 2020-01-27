@@ -12,7 +12,10 @@ public class App
     public static void main( String[] args )
     {
         ApplicationContext ac = new ClassPathXmlApplicationContext("spring.xml");
-        Caller caller = (Caller)ac.getBean("caller");
-        caller.print();
+//        Caller caller = (Caller)ac.getBean("caller");
+//        //caller.print();
+//        caller.callT();
+        A a = (A) ac.getBean("a");
+        
     }
 }
