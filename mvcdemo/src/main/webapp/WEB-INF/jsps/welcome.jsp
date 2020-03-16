@@ -8,9 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Welcome Page ${msg}</h1>
-<form action="login4" method="post" >
-<input name="uid"   type='text' placeholder="Type Userid Here"/>
+<h1>Welcome Page.... ${msg}</h1>
+<form action="login4" method="post" modelAttribute="user">
+<input name="userid"   type='text' placeholder="Type Userid Here"/>
 <br/>
 <input name="pwd"  type='password' placeholder="Type Password Here"/>
 <br/>

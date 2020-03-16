@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -51,13 +52,16 @@ public class MyController {
 			return new UserSessionAttr();
 	}
 	
-	@RequestMapping(method = RequestMethod.POST,path = "/login4")
+	@PostMapping(path = {"/admin/login","/guest/login","/common/login"})
+	//@RequestMapping(method = RequestMethod.POST,path = "/login4")
 	public ModelAndView doLogin4(HttpServletRequest request, @SessionAttribute("user") UserSessionAttr userObj) {
 		ModelAndView mv = new ModelAndView();
-		if(request.getParameter("uid").equals(request.getParameter("pwd"))) {
-			userObj.setUserid(request.getParameter("uid"));
+		userObj.setUserid(request.getParameter("userid"));
+		System.out.println("user Session is "+userObj);
+		if(request.getParameter("userid").equals(request.getParameter("pwd"))) {
+			userObj.setUserid(request.getParameter("userid"));
 			//session.setAttribute("userid", request.getParameter("uid"));
-			mv.addObject("userid",request.getParameter("uid"));
+			mv.addObject("userid",request.getParameter("userid"));
 			mv.setViewName("dashboard");
 			
 			//return "dashboard";
